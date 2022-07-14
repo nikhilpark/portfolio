@@ -21,8 +21,23 @@ export default function handler(
     if(req.method === 'POST'){
         const detectedIp = requestIp.getClientIp(req)
         const {lastVisit} = parseCookies(req)
-        console.log(lastVisit)
        
+        if(!lastVisit ){
+            console.log('Recording visitor')
+            const date = new Date()
+            const dateString = date.toLocaleString()
+            const content = `A user with ip ${detectedIp} visited on ${dateString}  \n`
+            fs.appendFile ('lib/visitors.txt', content, (err:any) => {
+                if (err) {    
+                  console.error(err);
+                }
+                
+            })
+                
+            
+           return res.status(200).json({ message: 'Visitor recorded' });
+        }
+
         const currentDate = new Date()
         const diff = currentDate.getTime() - Number(lastVisit)
         const fiteenMinutes = 1000 * 60 * 15
