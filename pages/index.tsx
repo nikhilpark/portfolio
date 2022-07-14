@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       </Head>
 
       {/* @ts-ignore */}
-      <Container className='pageBg1' maxWidth="100%" style={{borderRadius:'8px',width:'100%',height:'100vh',display:'flex',flexDirection:'column',justifyContent:'space-between'}} >
+      <Container className='pageBg1' maxWidth="100%" style={{width:'100%',height:'100vh',display:'flex',flexDirection:'column',justifyContent:'space-between'}} >
     <div style={{alignItems:'center',gap:'4rem',justifyContent:'center',height:'90%',display:'flex',flexDirection:'column'}}   >
     <div style={{display:'flex',gap:'1rem',justifyContent:'flex-end'}} >
     <img src="profile.png" alt="profile" style={{height:'14vh'}}/>
@@ -42,8 +42,8 @@ const Home: NextPage = () => {
      
      </div>
      <footer style={{display:'flex',justifyContent:'flex-end',gap:'1rem'}} >
-     <Typography style={{color:'white',fontSize:'1rem'}} >Made with ❤️ by Nikhil </Typography>
-    <Typography style={{color:'white',fontSize:'1rem'}} >© 2023 </Typography>
+     <Typography style={{color:'white',fontSize:'1rem'}} >Made with {"<></>"}  using Next.js </Typography>
+    <Typography style={{color:'white',fontSize:'1rem'}} >© 2022 </Typography>
     </footer>
     </Container>
     
